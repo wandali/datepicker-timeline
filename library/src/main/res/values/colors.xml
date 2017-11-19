@@ -12,7 +12,7 @@
 
     <color name="mti_lbl_date">#FFFFFF</color>
     <color name="mti_lbl_date_selected">#FFFFFF</color>
-    <color name="mti_bg_lbl_date_selected_color">#00b47c</color>
+    <color name="mti_bg_lbl_date_selected_color">@color/mti_default_primary</color>
     <color name="mti_ring_lbl_date_color">@color/mti_default_accent</color>
     <color name="mti_bg_lbl_today">#44ffffff</color>
 
