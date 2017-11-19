@@ -4,6 +4,8 @@ def compileLocal = true
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion as Integer
+    buildToolsVersion rootProject.ext.buildToolsVersion as String
+
     defaultConfig {
         applicationId "com.github.badoualy.datepicker.sample"
         minSdkVersion 14
