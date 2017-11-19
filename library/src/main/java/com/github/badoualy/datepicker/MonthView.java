@@ -26,8 +26,6 @@ public class MonthView extends RecyclerView {
     private int defaultColor, colorSelected, colorBeforeSelection;
 
     private int startYear = 1970, startMonth = 0;
-    private int yearDigitCount = 2;
-    private boolean yearOnNewLine = false;
 
     private int selectedYear, selectedMonth;
     private int selectedPosition = -1;
@@ -218,25 +216,6 @@ public class MonthView extends RecyclerView {
         return colorSelected;
     }
 
-    public void setYearDigitCount(int yearDigitCount) {
-        if (yearDigitCount < 0 || yearDigitCount > 4) {
-            throw new IllegalArgumentException("yearDigitCount cannot be smaller than 0 or greater than 4");
-        }
-        this.yearDigitCount = yearDigitCount;
-    }
-
-    public int getYearDigitCount() {
-        return yearDigitCount;
-    }
-
-    public void setYearOnNewLine(boolean yearOnNewLine) {
-        this.yearOnNewLine = yearOnNewLine;
-    }
-
-    public boolean isYearOnNewLine() {
-        return yearOnNewLine;
-    }
-
     public void setFirstDate(int startYear, int startMonth) {
         this.startYear = startYear;
         this.startMonth = startMonth;
@@ -325,12 +304,7 @@ public class MonthView extends RecyclerView {
             this.year = year;
             this.month = month;
 
-            String text = MONTHS[month].substring(0, 3).toUpperCase(Locale.US);
-            if (yearDigitCount > 0) {
-                text += yearOnNewLine ? "\n" : " ";
-                text += year % (int) Math.pow(10, yearDigitCount);
-            }
-            lbl.setText(text);
+            lbl.setText(MONTHS[month].substring(0, 3).toUpperCase(Locale.US)+"\n"+year);
             int color = selected ? colorSelected : beforeSelection ? colorBeforeSelection : defaultColor;
             lbl.setTextColor(color);
             indicator.setColor(color);

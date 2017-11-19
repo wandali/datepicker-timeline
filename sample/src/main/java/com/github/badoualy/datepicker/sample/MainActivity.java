@@ -32,9 +32,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //timeline.setFirstVisibleDate(2016, Calendar.JULY, 19);
         timeline.setLastVisibleDate(2020, Calendar.JULY, 19);
-        timeline.setFollowScroll(false);
+        //timeline.setFirstVisibleDate(2016, Calendar.JULY, 19);
     }
 
 }
