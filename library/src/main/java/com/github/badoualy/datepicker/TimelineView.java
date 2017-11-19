@@ -324,7 +324,6 @@ public class TimelineView extends RecyclerView {
 
         private final TextView lblDay;
         private final TextView lblDate;
-        private final TextView lblValue;
 
         private int position;
         private int year, month, day;
@@ -334,11 +333,9 @@ public class TimelineView extends RecyclerView {
 
             lblDay = (TextView) root.findViewById(R.id.mti_timeline_lbl_day);
             lblDate = (TextView) root.findViewById(R.id.mti_timeline_lbl_date);
-            lblValue = (TextView) root.findViewById(R.id.mti_timeline_lbl_value);
 
             lblDay.setTextColor(lblDayColor);
             lblDate.setTextColor(lblDateColor);
-            lblValue.setTextColor(lblLabelColor);
 
             root.setOnClickListener(new OnClickListener() {
                 @Override
@@ -356,7 +353,6 @@ public class TimelineView extends RecyclerView {
 
             lblDay.setText(WEEK_DAYS[dayOfWeek].toUpperCase(Locale.US));
             lblDate.setText(String.valueOf(day));
-            lblValue.setText(label);
 
             lblDate.setBackgroundResource(selected ? R.drawable.mti_bg_lbl_date_selected
                                                    : (isToday ? R.drawable.mti_bg_lbl_date_today : 0));

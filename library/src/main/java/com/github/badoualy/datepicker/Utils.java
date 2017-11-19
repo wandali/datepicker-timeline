@@ -34,23 +34,7 @@ final class Utils {
     }
 
     static int getPrimaryDarkColor(final Context context) {
-        int color = context.getResources().getIdentifier("colorPrimaryDark", "attr", context.getPackageName());
-        if (color != 0) {
-            // If using support library v7 primaryColor
-            TypedValue t = new TypedValue();
-            context.getTheme().resolveAttribute(color, t, true);
-            color = t.data;
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            // If using native primaryColor (SDK >21)
-            TypedArray t = context.obtainStyledAttributes(new int[]{android.R.attr.colorPrimaryDark});
-            color = t.getColor(0, ContextCompat.getColor(context, R.color.mti_default_primary_dark));
-            t.recycle();
-        } else {
-            TypedArray t = context.obtainStyledAttributes(new int[]{R.attr.colorPrimaryDark});
-            color = t.getColor(0, ContextCompat.getColor(context, R.color.mti_default_primary_dark));
-            t.recycle();
-        }
-
+        int color = ContextCompat.getColor(context, R.color.mti_default_primary_dark);
         return color;
     }
 }

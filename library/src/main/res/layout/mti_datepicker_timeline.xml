@@ -16,6 +16,6 @@
     <com.github.badoualy.datepicker.TimelineView
         android:id="@+id/mti_timeline"
         android:layout_width="match_parent"
-        android:layout_height="90dp"
-        tools:listitem="@layout/mti_item_day"/>
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/mti_item_day" />
 </merge>

@@ -108,7 +108,7 @@ public final class DatePickerTimeline extends LinearLayout implements MonthView.
         monthView.setColorBeforeSelection(tabBeforeSelectionColor);
         monthView.setOnMonthSelectedListener(this);
 
-        timelineView.setBackgroundColor(Color.WHITE);
+        timelineView.setBackgroundColor(primaryColor);
         timelineView.setFirstDate(startYear, startMonth, startDay);
         timelineView.setDayLabelColor(lblDayColor);
         timelineView.setDateLabelColor(lblDateColor);
